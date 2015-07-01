@@ -42,7 +42,7 @@ class AnomalyModulePartials_1_0_0_CreatePartialsFields extends Migration
         'layout'      => [
             'type'   => 'anomaly.field_type.editor',
             'config' => [
-                'default_value' => '<h1>{{ partial.title }}</h1>',
+                'default_value' => '<h1>{{ partial.entry.awesome }}</h1>',
                 'mode'          => 'twig'
             ]
         ],

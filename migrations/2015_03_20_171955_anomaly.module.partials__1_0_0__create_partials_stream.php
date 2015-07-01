@@ -37,6 +37,9 @@ class AnomalyModulePartials_1_0_0_CreatePartialsStream extends Migration
             'required' => true,
             'unique'   => true
         ],
+        'type' => [
+            'required' => true
+        ],
         'entry',
         'css',
         'js'

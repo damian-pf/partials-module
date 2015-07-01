@@ -33,26 +33,6 @@ class PartialRepository implements PartialRepositoryInterface
     }
 
     /**
-     * Return all partials.
-     *
-     * @return PartialCollection
-     */
-    public function all()
-    {
-        return $this->model->ordered()->get();
-    }
-
-    /**
-     * Return the first partial.
-     *
-     * @return PartialInterface
-     */
-    public function first()
-    {
-        return $this->model->ordered()->first();
-    }
-
-    /**
      * Find a partial by ID.
      *
      * @param $id
@@ -64,14 +44,14 @@ class PartialRepository implements PartialRepositoryInterface
     }
 
     /**
-     * Find a partial by it's path.
+     * Find a partial by it's slug.
      *
-     * @param $path
+     * @param $slug
      * @return null|PartialInterface
      */
-    public function findByPath($path)
+    public function findByPath($slug)
     {
-        return $this->model->where('home', false)->where('path', $path)->first();
+        return $this->model->where('slug', $slug)->first();
     }
 
     /**

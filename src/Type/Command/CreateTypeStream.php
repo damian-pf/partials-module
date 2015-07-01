@@ -51,7 +51,7 @@ class CreateTypeStream implements SelfHandling
                     'description' => $this->type->getDescription()
                 ],
                 'namespace'                         => 'partials',
-                'slug'                              => $this->type->getSlug(),
+                'slug'                              => $this->type->getSlug() . '_partials',
                 'translatable'                      => true,
                 'locked'                            => false
             ]

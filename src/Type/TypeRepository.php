@@ -43,6 +43,17 @@ class TypeRepository implements TypeRepositoryInterface
     }
 
     /**
+     * Find a partial by it's slug.
+     *
+     * @param $slug
+     * @return null|TypeInterface
+     */
+    public function findBySlug($slug)
+    {
+        return $this->model->where('slug', $slug)->first();
+    }
+
+    /**
      * Find a partial type by ID.
      *
      * @param $id

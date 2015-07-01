@@ -1,7 +1,5 @@
 <?php namespace Anomaly\PartialsModule\Partial\Contract;
 
-use Anomaly\PartialsModule\Partial\PartialCollection;
-
 /**
  * Interface PartialRepositoryInterface
  *
@@ -14,20 +12,6 @@ interface PartialRepositoryInterface
 {
 
     /**
-     * Return all partials.
-     *
-     * @return PartialCollection
-     */
-    public function all();
-
-    /**
-     * Return the first partial.
-     *
-     * @return PartialInterface
-     */
-    public function first();
-
-    /**
      * Find a partial by ID.
      *
      * @param $id
@@ -36,12 +20,12 @@ interface PartialRepositoryInterface
     public function find($id);
 
     /**
-     * Find a partial by it's path.
+     * Find a partial by it's slug.
      *
-     * @param $path
+     * @param $slug
      * @return null|PartialInterface
      */
-    public function findByPath($path);
+    public function findBySlug($slug);
 
     /**
      * Save a partial.

@@ -1,8 +1,6 @@
 <?php namespace Anomaly\PartialsModule;
 
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
-use Anomaly\Streams\Platform\Application\Application;
-use Illuminate\Filesystem\Filesystem;
 
 /**
  * Class PartialsModuleServiceProvider
@@ -62,16 +60,12 @@ class PartialsModuleServiceProvider extends AddonServiceProvider
     ];
 
     /**
-     * Map additional routes.
+     * The module plugins.
      *
-     * @param Filesystem  $files
-     * @param Application $application
+     * @var array
      */
-    public function map(Filesystem $files, Application $application)
-    {
-        // Include public routes.
-        if ($files->exists($routes = $application->getStoragePath('partials/routes.php'))) {
-            $files->requireOnce($routes);
-        }
-    }
+    protected $plugins = [
+        'Anomaly\PartialsModule\PartialsModulePlugin'
+    ];
+
 }

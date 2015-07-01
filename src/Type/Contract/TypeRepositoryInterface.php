@@ -27,4 +27,12 @@ interface TypeRepositoryInterface
      * @return null|TypeInterface
      */
     public function find($id);
+
+    /**
+     * Find a partial by it's slug.
+     *
+     * @param $slug
+     * @return null|TypeInterface
+     */
+    public function findBySlug($slug);
 }

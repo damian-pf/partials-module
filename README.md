@@ -1,2 +1,3 @@
-# Partials
-A partial content management module for Streams Platform.
+# Partials Module
+
+Partials management. 

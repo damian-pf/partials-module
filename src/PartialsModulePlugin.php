@@ -13,9 +13,19 @@ use Anomaly\Streams\Platform\Addon\Plugin\Plugin;
 class PartialsModulePlugin extends Plugin
 {
 
+    /**
+     * The plugin functions.
+     *
+     * @var PartialsModulePluginFunctions
+     */
     protected $functions;
 
-    public function __construct($functions)
+    /**
+     * Create a new PartialsModulePlugin instance.
+     *
+     * @param PartialsModulePluginFunctions $functions
+     */
+    public function __construct(PartialsModulePluginFunctions $functions)
     {
         $this->functions = $functions;
     }
@@ -28,7 +38,7 @@ class PartialsModulePlugin extends Plugin
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('partial', [$this->functions, 'partial'])
+            new \Twig_SimpleFunction('partial', [$this->functions, 'partial'], ['is_safe' => ['html']])
         ];
     }
 }

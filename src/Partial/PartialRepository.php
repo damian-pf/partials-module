@@ -49,7 +49,7 @@ class PartialRepository implements PartialRepositoryInterface
      * @param $slug
      * @return null|PartialInterface
      */
-    public function findByPath($slug)
+    public function findBySlug($slug)
     {
         return $this->model->where('slug', $slug)->first();
     }

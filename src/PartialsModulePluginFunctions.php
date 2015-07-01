@@ -1,6 +1,7 @@
 <?php namespace Anomaly\PartialsModule;
 
 use Anomaly\PartialsModule\Partial\Contract\PartialRepositoryInterface;
+use Illuminate\View\View;
 
 /**
  * Class PartialsModulePluginFunctions
@@ -34,11 +35,13 @@ class PartialsModulePluginFunctions
      * Return a partial.
      *
      * @param $slug
-     * @return \Illuminate\View\View
+     * @return null|View
      */
     public function partial($slug)
     {
-        $partial = $this->partials->findBySlug($slug);
+        if (!$partial = $this->partials->findBySlug($slug)) {
+            return null;
+        }
 
         return view('anomaly.module.partials::partial', compact('partial'));
     }

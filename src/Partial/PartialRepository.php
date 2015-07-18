@@ -2,7 +2,7 @@
 
 use Anomaly\PartialsModule\Partial\Contract\PartialInterface;
 use Anomaly\PartialsModule\Partial\Contract\PartialRepositoryInterface;
-use Anomaly\Streams\Platform\Model\EloquentModel;
+use Anomaly\Streams\Platform\Entry\EntryRepository;
 
 /**
  * Class PartialRepository
@@ -12,7 +12,7 @@ use Anomaly\Streams\Platform\Model\EloquentModel;
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\PartialsModule\Partial
  */
-class PartialRepository implements PartialRepositoryInterface
+class PartialRepository extends EntryRepository implements PartialRepositoryInterface
 {
 
     /**
@@ -33,17 +33,6 @@ class PartialRepository implements PartialRepositoryInterface
     }
 
     /**
-     * Find a partial by ID.
-     *
-     * @param $id
-     * @return null|PartialInterface
-     */
-    public function find($id)
-    {
-        return $this->model->find($id);
-    }
-
-    /**
      * Find a partial by it's slug.
      *
      * @param $slug
@@ -52,27 +41,5 @@ class PartialRepository implements PartialRepositoryInterface
     public function findBySlug($slug)
     {
         return $this->model->where('slug', $slug)->first();
-    }
-
-    /**
-     * Save a partial.
-     *
-     * @param PartialInterface|EloquentModel $partial
-     * @return PartialInterface
-     */
-    public function save(PartialInterface $partial)
-    {
-        return $partial->save();
-    }
-
-    /**
-     * Delete a partial.
-     *
-     * @param PartialInterface|EloquentModel $partial
-     * @return bool
-     */
-    public function delete(PartialInterface $partial)
-    {
-        return $partial->delete();
     }
 }

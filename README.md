@@ -1,3 +1,3 @@
 # Partials Module
 
-Partials management. 
+Manage snippets of rich content to use anywhere.

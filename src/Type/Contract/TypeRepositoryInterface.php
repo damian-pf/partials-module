@@ -1,6 +1,6 @@
 <?php namespace Anomaly\PartialsModule\Type\Contract;
 
-use Anomaly\Streams\Platform\Model\EloquentCollection;
+use Anomaly\Streams\Platform\Entry\Contract\EntryRepositoryInterface;
 
 /**
  * Interface TypeRepositoryInterface
@@ -10,23 +10,8 @@ use Anomaly\Streams\Platform\Model\EloquentCollection;
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\PartialsModule\Type\Contract
  */
-interface TypeRepositoryInterface
+interface TypeRepositoryInterface extends EntryRepositoryInterface
 {
-
-    /**
-     * Return all available partial types.
-     *
-     * @return EloquentCollection
-     */
-    public function all();
-
-    /**
-     * Find a partial type by ID.
-     *
-     * @param $id
-     * @return null|TypeInterface
-     */
-    public function find($id);
 
     /**
      * Find a partial by it's slug.

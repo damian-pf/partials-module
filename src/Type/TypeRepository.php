@@ -2,7 +2,7 @@
 
 use Anomaly\PartialsModule\Type\Contract\TypeInterface;
 use Anomaly\PartialsModule\Type\Contract\TypeRepositoryInterface;
-use Anomaly\Streams\Platform\Model\EloquentCollection;
+use Anomaly\Streams\Platform\Entry\EntryRepository;
 
 /**
  * Class TypeRepository
@@ -12,7 +12,7 @@ use Anomaly\Streams\Platform\Model\EloquentCollection;
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\PartialsModule\Type
  */
-class TypeRepository implements TypeRepositoryInterface
+class TypeRepository extends EntryRepository implements TypeRepositoryInterface
 {
 
     /**
@@ -33,16 +33,6 @@ class TypeRepository implements TypeRepositoryInterface
     }
 
     /**
-     * Return all available partial types.
-     *
-     * @return EloquentCollection
-     */
-    public function all()
-    {
-        return $this->model->all();
-    }
-
-    /**
      * Find a partial by it's slug.
      *
      * @param $slug
@@ -51,16 +41,5 @@ class TypeRepository implements TypeRepositoryInterface
     public function findBySlug($slug)
     {
         return $this->model->where('slug', $slug)->first();
-    }
-
-    /**
-     * Find a partial type by ID.
-     *
-     * @param $id
-     * @return null|TypeInterface
-     */
-    public function find($id)
-    {
-        return $this->model->find($id);
     }
 }

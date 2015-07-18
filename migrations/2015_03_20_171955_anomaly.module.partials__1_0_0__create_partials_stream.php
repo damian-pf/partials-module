@@ -19,8 +19,7 @@ class AnomalyModulePartials_1_0_0_CreatePartialsStream extends Migration
      */
     protected $stream = [
         'slug'         => 'partials',
-        'title_column' => 'name',
-        'locked'       => true
+        'title_column' => 'name'
     ];
 
     /**
@@ -29,18 +28,20 @@ class AnomalyModulePartials_1_0_0_CreatePartialsStream extends Migration
      * @var array
      */
     protected $assignments = [
-        'name' => [
+        'name'  => [
             'required' => true,
             'unique'   => true
         ],
-        'slug' => [
+        'slug'  => [
             'required' => true,
             'unique'   => true
         ],
-        'type' => [
+        'type'  => [
             'required' => true
         ],
-        'entry',
+        'entry' => [
+            'required' => true
+        ],
         'css',
         'js'
     ];

@@ -48,16 +48,6 @@ class TypeModel extends PartialsTypesEntryModel implements TypeInterface
     }
 
     /**
-     * Get the TTL.
-     *
-     * @return null|int
-     */
-    public function getTtl()
-    {
-        return $this->ttl;
-    }
-
-    /**
      * Get the description.
      *
      * @return string
@@ -65,36 +55,6 @@ class TypeModel extends PartialsTypesEntryModel implements TypeInterface
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * Get the meta title.
-     *
-     * @return string
-     */
-    public function getMetaTitle()
-    {
-        return $this->meta_title;
-    }
-
-    /**
-     * Get the meta keywords.
-     *
-     * @return array
-     */
-    public function getMetaKeywords()
-    {
-        return $this->meta_keywords;
-    }
-
-    /**
-     * Get the meta description.
-     *
-     * @return string
-     */
-    public function getMetaDescription()
-    {
-        return $this->meta_description;
     }
 
     /**
@@ -109,7 +69,7 @@ class TypeModel extends PartialsTypesEntryModel implements TypeInterface
 
         $css->setEntry($this);
 
-        return $css->getStoragePath();
+        return $css->getAssetPath();
     }
 
     /**
@@ -124,7 +84,7 @@ class TypeModel extends PartialsTypesEntryModel implements TypeInterface
 
         $js->setEntry($this);
 
-        return $js->getStoragePath();
+        return $js->getAssetPath();
     }
 
     /**

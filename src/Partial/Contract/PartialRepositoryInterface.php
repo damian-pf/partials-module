@@ -1,5 +1,7 @@
 <?php namespace Anomaly\PartialsModule\Partial\Contract;
 
+use Anomaly\Streams\Platform\Entry\Contract\EntryRepositoryInterface;
+
 /**
  * Interface PartialRepositoryInterface
  *
@@ -8,16 +10,8 @@
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\PartialsModule\Partial\Contract
  */
-interface PartialRepositoryInterface
+interface PartialRepositoryInterface extends EntryRepositoryInterface
 {
-
-    /**
-     * Find a partial by ID.
-     *
-     * @param $id
-     * @return null|PartialInterface
-     */
-    public function find($id);
 
     /**
      * Find a partial by it's slug.
@@ -26,20 +20,4 @@ interface PartialRepositoryInterface
      * @return null|PartialInterface
      */
     public function findBySlug($slug);
-
-    /**
-     * Save a partial.
-     *
-     * @param PartialInterface $partial
-     * @return PartialInterface
-     */
-    public function save(PartialInterface $partial);
-
-    /**
-     * Delete a partial.
-     *
-     * @param PartialInterface $partial
-     * @return bool
-     */
-    public function delete(PartialInterface $partial);
 }

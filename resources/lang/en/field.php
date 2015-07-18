@@ -3,12 +3,13 @@
 return [
     'name'        => [
         'name'         => 'Name',
-        'instructions' => 'What is the name of this partial type?'
+        'placeholder'  => 'Example',
+        'instructions' => 'Specify an easily identifiable name.'
     ],
     'slug'        => [
         'name'         => 'Slug',
-        'placeholder'  => 'hello-world',
-        'instructions' => 'The slug is used in building the partial\'s URL.'
+        'placeholder'  => 'example',
+        'instructions' => 'The slug will be used when accessing partials with the plugin.'
     ],
     'css'         => [
         'name'         => 'CSS',
@@ -20,14 +21,15 @@ return [
     ],
     'type'        => [
         'name'         => 'Type',
-        'instructions' => 'Specify the type of partial this is.'
+        'instructions' => 'Specify what type of partial this is.'
     ],
     'description' => [
         'name'         => 'Description',
-        'instructions' => 'Briefly describe the partial type.'
+        'instructions' => 'Briefly describe the partial type and how it might be used.',
+        'placeholder'  => 'The example partials are used to display product example presentations for the website\'s product pages.'
     ],
     'layout'      => [
         'name'         => 'Layout',
-        'instructions' => 'The layout will be used to display the partial content.'
+        'instructions' => 'The layout is used to wrap the display the partial\'s output.'
     ]
 ];

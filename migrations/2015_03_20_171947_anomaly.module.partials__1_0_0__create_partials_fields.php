@@ -13,7 +13,7 @@ class AnomalyModulePartials_1_0_0_CreatePartialsFields extends Migration
 {
 
     /**
-     * The module fields.
+     * The addon fields.
      *
      * @var array
      */
@@ -42,8 +42,8 @@ class AnomalyModulePartials_1_0_0_CreatePartialsFields extends Migration
         'layout'      => [
             'type'   => 'anomaly.field_type.editor',
             'config' => [
-                'default_value' => '<h1>{{ partial.entry.awesome }}</h1>',
-                'mode'          => 'twig'
+                'mode'          => 'twig',
+                'default_value' => '<h1>{{ partial.entry.foo_bar }}</h1>'
             ]
         ],
         'type'        => [

@@ -19,8 +19,7 @@ class AnomalyModulePartials_1_0_0_CreateTypesStream extends Migration
      */
     protected $stream = [
         'slug'         => 'types',
-        'title_column' => 'name',
-        'locked'       => true
+        'title_column' => 'name'
     ];
 
     /**

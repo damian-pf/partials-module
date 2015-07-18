@@ -11,7 +11,7 @@ use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\PartialsModule\Partial\Contract
  */
-interface PartialInterface
+interface PartialInterface extends EntryInterface
 {
 
     /**

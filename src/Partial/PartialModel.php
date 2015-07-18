@@ -58,7 +58,7 @@ class PartialModel extends PartialsPartialsEntryModel implements PartialInterfac
 
         $css->setEntry($this);
 
-        return $css->getStoragePath();
+        return $css->getAssetPath();
     }
 
     /**
@@ -73,7 +73,7 @@ class PartialModel extends PartialsPartialsEntryModel implements PartialInterfac
 
         $js->setEntry($this);
 
-        return $js->getStoragePath();
+        return $js->getAssetPath();
     }
 
     /**
@@ -105,5 +105,4 @@ class PartialModel extends PartialsPartialsEntryModel implements PartialInterfac
     {
         return $this->entry_id;
     }
-
 }

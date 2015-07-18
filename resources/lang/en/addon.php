@@ -2,7 +2,7 @@
 
 return [
     'name'        => 'Partials',
-    'description' => 'Partials management.',
+    'description' => 'Manage snippets of rich content to use anywhere.',
     'section'     => [
         'partials' => 'Partials',
         'types'    => 'Types',

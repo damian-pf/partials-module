@@ -1,12 +1,10 @@
 <?php namespace Anomaly\PartialsModule\Partial;
 
-use Anomaly\EditorFieldType\EditorFieldType;
 use Anomaly\PartialsModule\Partial\Contract\PartialInterface;
 use Anomaly\PartialsModule\Type\Contract\TypeInterface;
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 use Anomaly\Streams\Platform\Model\Partials\PartialsPartialsEntryModel;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Http\Response;
 
 /**
  * Class PartialModel
@@ -44,36 +42,6 @@ class PartialModel extends PartialsPartialsEntryModel implements PartialInterfac
     public function getSlug()
     {
         return $this->slug;
-    }
-
-    /**
-     * Get the CSS path.
-     *
-     * @return string
-     */
-    public function getCssPath()
-    {
-        /* @var EditorFieldType $css */
-        $css = $this->getFieldType('css');
-
-        $css->setEntry($this);
-
-        return $css->getAssetPath();
-    }
-
-    /**
-     * Get the JS path.
-     *
-     * @return string
-     */
-    public function getJsPath()
-    {
-        /* @var EditorFieldType $js */
-        $js = $this->getFieldType('js');
-
-        $js->setEntry($this);
-
-        return $js->getAssetPath();
     }
 
     /**

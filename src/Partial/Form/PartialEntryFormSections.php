@@ -47,18 +47,6 @@ class PartialEntryFormSections
                                     )
                                 );
                             }
-                        ],
-                        'css'     => [
-                            'title'  => 'module::tab.css',
-                            'fields' => [
-                                'css'
-                            ]
-                        ],
-                        'js'      => [
-                            'title'  => 'module::tab.js',
-                            'fields' => [
-                                'js'
-                            ]
                         ]
                     ]
                 ]

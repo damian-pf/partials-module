@@ -11,14 +11,6 @@ return [
         'placeholder'  => 'example',
         'instructions' => 'The slug will be used when accessing partials with the plugin.'
     ],
-    'css'         => [
-        'name'         => 'CSS',
-        'instructions' => 'CSS files are parsed when loading so feel free to use theme settings and other tags.'
-    ],
-    'js'          => [
-        'name'         => 'JS',
-        'instructions' => 'JS files are parsed when loading so feel free to use theme settings and other tags.'
-    ],
     'type'        => [
         'name'         => 'Type',
         'instructions' => 'Specify what type of partial this is.'

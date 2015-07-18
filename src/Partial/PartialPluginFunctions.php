@@ -1,6 +1,7 @@
 <?php namespace Anomaly\PartialsModule\Partial;
 
 use Anomaly\PartialsModule\Partial\Contract\PartialRepositoryInterface;
+use Anomaly\Streams\Platform\Asset\Asset;
 use Illuminate\View\View;
 
 /**
@@ -26,8 +27,9 @@ class PartialPluginFunctions
      *
      * @param PartialRepositoryInterface $partials
      */
-    public function __construct(PartialRepositoryInterface $partials)
+    public function __construct(PartialRepositoryInterface $partials, Asset $asset)
     {
+        $this->asset = $asset;
         $this->partials = $partials;
     }
 

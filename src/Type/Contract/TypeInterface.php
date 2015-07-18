@@ -36,20 +36,6 @@ interface TypeInterface extends EntryInterface
     public function getDescription();
 
     /**
-     * Get the CSS path.
-     *
-     * @return string
-     */
-    public function getCssPath();
-
-    /**
-     * Get the JS path.
-     *
-     * @return string
-     */
-    public function getJsPath();
-
-    /**
      * Get the related entry stream.
      *
      * @return StreamInterface

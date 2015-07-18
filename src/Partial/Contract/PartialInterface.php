@@ -22,20 +22,6 @@ interface PartialInterface extends EntryInterface
     public function getSlug();
 
     /**
-     * Get the CSS path.
-     *
-     * @return string
-     */
-    public function getCssPath();
-
-    /**
-     * Get the JS path.
-     *
-     * @return string
-     */
-    public function getJsPath();
-
-    /**
      * Get the partial type.
      *
      * @return null|TypeInterface

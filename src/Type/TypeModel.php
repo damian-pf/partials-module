@@ -1,6 +1,5 @@
 <?php namespace Anomaly\PartialsModule\Type;
 
-use Anomaly\EditorFieldType\EditorFieldType;
 use Anomaly\PartialsModule\Type\Command\GetTypeStream;
 use Anomaly\PartialsModule\Type\Contract\TypeInterface;
 use Anomaly\Streams\Platform\Model\Partials\PartialsTypesEntryModel;
@@ -55,36 +54,6 @@ class TypeModel extends PartialsTypesEntryModel implements TypeInterface
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * Get the CSS path.
-     *
-     * @return string
-     */
-    public function getCssPath()
-    {
-        /* @var EditorFieldType $css */
-        $css = $this->getFieldType('css');
-
-        $css->setEntry($this);
-
-        return $css->getAssetPath();
-    }
-
-    /**
-     * Get the JS path.
-     *
-     * @return string
-     */
-    public function getJsPath()
-    {
-        /* @var EditorFieldType $js */
-        $js = $this->getFieldType('js');
-
-        $js->setEntry($this);
-
-        return $js->getAssetPath();
     }
 
     /**

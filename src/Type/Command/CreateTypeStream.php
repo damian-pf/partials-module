@@ -2,10 +2,9 @@
 
 use Anomaly\PartialsModule\Type\Contract\TypeInterface;
 use Anomaly\Streams\Platform\Stream\Contract\StreamRepositoryInterface;
-use Anomaly\Streams\Platform\Stream\StreamManager;
 use Illuminate\Config\Repository;
 use Illuminate\Contracts\Bus\SelfHandling;
-use Illuminate\Foundation\Bus\DispatchesCommands;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 
 /**
  * Class CreateTypeStream
@@ -18,7 +17,7 @@ use Illuminate\Foundation\Bus\DispatchesCommands;
 class CreateTypeStream implements SelfHandling
 {
 
-    use DispatchesCommands;
+    use DispatchesJobs;
 
     /**
      * The partial type instance.
@@ -42,7 +41,7 @@ class CreateTypeStream implements SelfHandling
      *
      * @param StreamRepositoryInterface $streams
      */
-    public function handle(StreamManager $manager, Repository $config)
+    public function handle(StreamRepositoryInterface $manager, Repository $config)
     {
         $manager->create(
             [

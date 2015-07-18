@@ -18,7 +18,7 @@ class PartialsModule extends Module
      *
      * @var string
      */
-    protected $icon = 'laptop';
+    protected $icon = 'scissors';
 
     /**
      * The module sections.

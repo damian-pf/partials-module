@@ -1,17 +1,17 @@
-<?php namespace Anomaly\PartialsModule;
+<?php namespace Anomaly\PartialsModule\Partial;
 
 use Anomaly\PartialsModule\Partial\Contract\PartialRepositoryInterface;
 use Illuminate\View\View;
 
 /**
- * Class PartialsModulePluginFunctions
+ * Class PartialPluginFunctions
  *
  * @link          http://anomaly.is/streams-platform
  * @author        AnomalyLabs, Inc. <hello@anomaly.is>
  * @author        Ryan Thompson <ryan@anomaly.is>
- * @package       Anomaly\PartialsModule
+ * @package       Anomaly\PartialsModule\Partial
  */
-class PartialsModulePluginFunctions
+class PartialPluginFunctions
 {
 
     /**
@@ -22,7 +22,7 @@ class PartialsModulePluginFunctions
     protected $partials;
 
     /**
-     * Create a new PartialsModulePluginFunctions instance.
+     * Create a new PartialPluginFunctions instance.
      *
      * @param PartialRepositoryInterface $partials
      */
@@ -32,17 +32,17 @@ class PartialsModulePluginFunctions
     }
 
     /**
-     * Return a partial.
+     * Render a partial.
      *
      * @param $slug
      * @return null|View
      */
-    public function partial($slug)
+    public function render($slug)
     {
         if (!$partial = $this->partials->findBySlug($slug)) {
             return null;
         }
 
-        return view('anomaly.module.partials::partial', compact('partial'));
+        return view('anomaly.module.partials::partial', compact('partial'))->render();
     }
 }

@@ -1,31 +1,31 @@
-<?php namespace Anomaly\PartialsModule;
+<?php namespace Anomaly\PartialsModule\Partial;
 
 use Anomaly\Streams\Platform\Addon\Plugin\Plugin;
 
 /**
- * Class PartialsModulePlugin
+ * Class PartialPlugin
  *
  * @link          http://anomaly.is/streams-platform
  * @author        AnomalyLabs, Inc. <hello@anomaly.is>
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\PartialsModule
  */
-class PartialsModulePlugin extends Plugin
+class PartialPlugin extends Plugin
 {
 
     /**
      * The plugin functions.
      *
-     * @var PartialsModulePluginFunctions
+     * @var PartialPluginFunctions
      */
     protected $functions;
 
     /**
-     * Create a new PartialsModulePlugin instance.
+     * Create a new PartialPlugin instance.
      *
-     * @param PartialsModulePluginFunctions $functions
+     * @param PartialPluginFunctions $functions
      */
-    public function __construct(PartialsModulePluginFunctions $functions)
+    public function __construct(PartialPluginFunctions $functions)
     {
         $this->functions = $functions;
     }
@@ -38,7 +38,7 @@ class PartialsModulePlugin extends Plugin
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('partial', [$this->functions, 'partial'], ['is_safe' => ['html']])
+            new \Twig_SimpleFunction('partials_render', [$this->functions, 'render'], ['is_safe' => ['html']])
         ];
     }
 }

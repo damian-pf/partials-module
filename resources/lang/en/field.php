@@ -18,6 +18,10 @@ return [
         'name'         => 'JS',
         'instructions' => 'JS files are parsed when loading so feel free to use theme settings and other tags.'
     ],
+    'type'        => [
+        'name'         => 'Type',
+        'instructions' => 'Specify the type of partial this is.'
+    ],
     'description' => [
         'name'         => 'Description',
         'instructions' => 'Briefly describe the partial type.'

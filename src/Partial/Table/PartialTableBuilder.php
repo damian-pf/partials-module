@@ -14,12 +14,42 @@ class PartialTableBuilder extends TableBuilder
 {
 
     /**
+     * The table filters.
+     *
+     * @var array
+     */
+    protected $filters = [
+        'name',
+        'type'
+    ];
+
+    /**
      * The table columns.
      *
      * @var array
      */
     protected $columns = [
-        'name'
+        'name',
+        'slug',
+        'entry.type.name'
+    ];
+
+    /**
+     * The table buttons.
+     *
+     * @var array
+     */
+    protected $buttons = [
+        'edit'
+    ];
+
+    /**
+     * The table actions.
+     *
+     * @var array
+     */
+    protected $actions = [
+        'delete'
     ];
 
 }

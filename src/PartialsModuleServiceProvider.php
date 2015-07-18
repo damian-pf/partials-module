@@ -14,6 +14,25 @@ class PartialsModuleServiceProvider extends AddonServiceProvider
 {
 
     /**
+     * The module plugins.
+     *
+     * @var array
+     */
+    protected $plugins = [
+        'Anomaly\PartialsModule\Partial\PartialPlugin'
+    ];
+
+    /**
+     * The singleton bindings.
+     *
+     * @var array
+     */
+    protected $singletons = [
+        'Anomaly\PartialsModule\Type\Contract\TypeRepositoryInterface'       => 'Anomaly\PartialsModule\Type\TypeRepository',
+        'Anomaly\PartialsModule\Partial\Contract\PartialRepositoryInterface' => 'Anomaly\PartialsModule\Partial\PartialRepository'
+    ];
+
+    /**
      * The addon routes.
      *
      * @var array
@@ -37,35 +56,6 @@ class PartialsModuleServiceProvider extends AddonServiceProvider
         'admin/partials/ajax/choose_type'                          => 'Anomaly\PartialsModule\Http\Controller\Admin\AjaxController@chooseType',
         'admin/partials/ajax/choose_field/{id}'                    => 'Anomaly\PartialsModule\Http\Controller\Admin\AjaxController@chooseField',
         'admin/partials/settings'                                  => 'Anomaly\PartialsModule\Http\Controller\Admin\SettingsController@index',
-    ];
-
-    /**
-     * The class bindings.
-     *
-     * @var array
-     */
-    protected $bindings = [
-        'Anomaly\Streams\Platform\Model\Partials\PartialsPartialsEntryModel' => 'Anomaly\PartialsModule\Partial\PartialModel',
-        'Anomaly\Streams\Platform\Model\Partials\PartialsTypesEntryModel'    => 'Anomaly\PartialsModule\Type\TypeModel'
-    ];
-
-    /**
-     * The singleton bindings.
-     *
-     * @var array
-     */
-    protected $singletons = [
-        'Anomaly\PartialsModule\Partial\Contract\PartialRepositoryInterface' => 'Anomaly\PartialsModule\Partial\PartialRepository',
-        'Anomaly\PartialsModule\Type\Contract\TypeRepositoryInterface'       => 'Anomaly\PartialsModule\Type\TypeRepository'
-    ];
-
-    /**
-     * The module plugins.
-     *
-     * @var array
-     */
-    protected $plugins = [
-        'Anomaly\PartialsModule\PartialsModulePlugin'
     ];
 
 }

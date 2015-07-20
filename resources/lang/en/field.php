@@ -4,7 +4,7 @@ return [
     'name'        => [
         'name'         => 'Name',
         'placeholder'  => 'Example',
-        'instructions' => 'Specify an easily identifiable name.'
+        'instructions' => 'Enter an easily identifiable name.'
     ],
     'slug'        => [
         'name'         => 'Slug',

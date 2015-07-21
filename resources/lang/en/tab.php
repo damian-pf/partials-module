@@ -3,6 +3,8 @@
 return [
     'general' => 'General',
     'partial' => 'Partial',
+    'content' => 'Content',
     'layout'  => 'Layout',
-    'entry'   => 'Entry'
+    'css'     => 'CSS',
+    'js'      => 'JS'
 ];

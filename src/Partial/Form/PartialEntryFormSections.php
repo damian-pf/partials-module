@@ -28,16 +28,16 @@ class PartialEntryFormSections
                         'general' => [
                             'title'  => 'module::tab.partial',
                             'fields' => [
-                                'name',
-                                'slug'
+                                'partial_name',
+                                'partial_slug'
                             ]
                         ],
-                        'entry'   => [
-                            'title'  => 'module::tab.entry',
+                        'content' => [
+                            'title'  => 'module::tab.content',
                             'fields' => function (PartialEntryFormBuilder $builder) {
                                 return array_map(
                                     function (FieldType $field) {
-                                        return $field->getField();
+                                        return 'entry_' . $field->getField();
                                     },
                                     array_filter(
                                         $builder->getFormFields()->all(),
@@ -47,6 +47,18 @@ class PartialEntryFormSections
                                     )
                                 );
                             }
+                        ],
+                        'css'     => [
+                            'title'  => 'module::tab.css',
+                            'fields' => [
+                                'partial_css'
+                            ]
+                        ],
+                        'js'      => [
+                            'title'  => 'module::tab.js',
+                            'fields' => [
+                                'partial_js'
+                            ]
                         ]
                     ]
                 ]

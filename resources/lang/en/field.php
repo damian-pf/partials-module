@@ -23,5 +23,11 @@ return [
     'layout'      => [
         'name'         => 'Layout',
         'instructions' => 'The layout is used to wrap the display the partial\'s output.'
+    ],
+    'css'         => [
+        'name' => 'CSS'
+    ],
+    'js'          => [
+        'name' => 'JS'
     ]
 ];

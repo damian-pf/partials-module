@@ -41,7 +41,9 @@ class AnomalyModulePartials_1_0_0_CreatePartialsStream extends Migration
         ],
         'entry' => [
             'required' => true
-        ]
+        ],
+        'css',
+        'js'
     ];
 
 }

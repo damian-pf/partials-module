@@ -27,6 +27,18 @@ class AnomalyModulePartials_1_0_0_CreatePartialsFields extends Migration
                 'type'    => '_'
             ]
         ],
+        'css'         => [
+            'type'   => 'anomaly.field_type.editor',
+            'config' => [
+                'mode' => 'css'
+            ]
+        ],
+        'js'          => [
+            'type'   => 'anomaly.field_type.editor',
+            'config' => [
+                'mode' => 'javascript'
+            ]
+        ],
         'layout'      => [
             'type'   => 'anomaly.field_type.editor',
             'config' => [

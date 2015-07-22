@@ -31,7 +31,7 @@ class PartialsModule extends Module
                 'new_partial' => [
                     'data-toggle' => 'modal',
                     'data-target' => '#modal',
-                    'href'        => 'admin/partials/ajax/choose_type'
+                    'href'        => 'admin/partials/choose'
                 ]
             ]
         ],
@@ -42,7 +42,7 @@ class PartialsModule extends Module
                     'data-toggle' => 'modal',
                     'data-target' => '#modal',
                     'enabled'     => 'admin/partials/types/fields/*',
-                    'href'        => 'admin/partials/ajax/choose_field/{route.parameters.id}'
+                    'href'        => 'admin/partials/types/choose/{route.parameters.id}'
                 ]
             ]
         ],

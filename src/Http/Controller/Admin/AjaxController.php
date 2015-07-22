@@ -16,16 +16,7 @@ use Anomaly\Streams\Platform\Http\Controller\AdminController;
 class AjaxController extends AdminController
 {
 
-    /**
-     * Return the modal for choosing a partial type.
-     *
-     * @param TypeRepositoryInterface $types
-     * @return \Illuminate\View\View
-     */
-    public function chooseType(TypeRepositoryInterface $types)
-    {
-        return view('module::ajax/choose_type', ['types' => $types->all()]);
-    }
+
 
     /**
      * Return the modal for choosing a field type.
@@ -40,22 +31,5 @@ class AjaxController extends AdminController
         return view('module::ajax/choose_field_type', ['field_types' => $fieldTypes->all(), 'url' => $url]);
     }
 
-    /**
-     * Return the modal for choosing a field to assign.
-     *
-     * @param FieldRepositoryInterface $fields
-     * @return \Illuminate\View\View
-     */
-    public function chooseField(FieldRepositoryInterface $fields, TypeRepositoryInterface $types, $id)
-    {
-        $type = $types->find($id);
 
-        return view(
-            'module::ajax/choose_field',
-            [
-                'fields' => $fields->findByNamespace('partials')->notAssignedTo($type->getEntryStream())->unlocked(),
-                'id'     => $id
-            ]
-        );
-    }
 }

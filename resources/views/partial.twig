@@ -1,3 +1,9 @@
+{{ asset_add('styles.css', partial.type.css.path) }}
+{{ asset_add('styles.css', partial.css.path) }}
+
+{{ asset_add('scripts.js', partial.type.js.path) }}
+{{ asset_add('scripts.js', partial.js.path) }}
+
 <div class="{{ partial.type.slug }} {{ partial.slug }}">
     {% include partial.type.layout.path %}
 </div>

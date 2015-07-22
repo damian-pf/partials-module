@@ -1,18 +1,18 @@
-<?php namespace Anomaly\PartialsModule\Partial;
+<?php namespace Anomaly\PartialsModule;
 
 use Anomaly\PartialsModule\Partial\Contract\PartialRepositoryInterface;
 use Anomaly\Streams\Platform\Asset\Asset;
 use Illuminate\View\View;
 
 /**
- * Class PartialPluginFunctions
+ * Class PartialsModuleFunctions
  *
  * @link          http://anomaly.is/streams-platform
  * @author        AnomalyLabs, Inc. <hello@anomaly.is>
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\PartialsModule\Partial
  */
-class PartialPluginFunctions
+class PartialsModuleFunctions
 {
 
     /**
@@ -23,13 +23,13 @@ class PartialPluginFunctions
     protected $partials;
 
     /**
-     * Create a new PartialPluginFunctions instance.
+     * Create a new PartialsModuleFunctions instance.
      *
      * @param PartialRepositoryInterface $partials
      */
     public function __construct(PartialRepositoryInterface $partials, Asset $asset)
     {
-        $this->asset = $asset;
+        $this->asset    = $asset;
         $this->partials = $partials;
     }
 

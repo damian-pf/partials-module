@@ -7,6 +7,7 @@ use Anomaly\PartialsModule\Partial\Form\Command\AddPartialFormFromPartial;
 use Anomaly\PartialsModule\Partial\Form\Command\AddPartialFormFromRequest;
 use Anomaly\PartialsModule\Partial\Form\PartialEntryFormBuilder;
 use Anomaly\PartialsModule\Partial\Table\PartialTableBuilder;
+use Anomaly\PartialsModule\Type\Contract\TypeRepositoryInterface;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
 use Anomaly\Streams\Platform\Support\Authorizer;
 use Illuminate\Routing\Redirector;
@@ -31,6 +32,17 @@ class PartialsController extends AdminController
     public function index(PartialTableBuilder $tree)
     {
         return $tree->render();
+    }
+
+    /**
+     * Return the modal for choosing a partial type.
+     *
+     * @param TypeRepositoryInterface $types
+     * @return \Illuminate\View\View
+     */
+    public function choose(TypeRepositoryInterface $types)
+    {
+        return view('module::ajax/choose_type', ['types' => $types->all()]);
     }
 
     /**

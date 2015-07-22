@@ -1,31 +1,31 @@
-<?php namespace Anomaly\PartialsModule\Partial;
+<?php namespace Anomaly\PartialsModule;
 
 use Anomaly\Streams\Platform\Addon\Plugin\Plugin;
 
 /**
- * Class PartialPlugin
+ * Class PartialsModulePlugin
  *
  * @link          http://anomaly.is/streams-platform
  * @author        AnomalyLabs, Inc. <hello@anomaly.is>
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\PartialsModule
  */
-class PartialPlugin extends Plugin
+class PartialsModulePlugin extends Plugin
 {
 
     /**
      * The plugin functions.
      *
-     * @var PartialPluginFunctions
+     * @var PartialsModuleFunctions
      */
     protected $functions;
 
     /**
-     * Create a new PartialPlugin instance.
+     * Create a new PartialsModule instance.
      *
-     * @param PartialPluginFunctions $functions
+     * @param PartialsModuleFunctions $functions
      */
-    public function __construct(PartialPluginFunctions $functions)
+    public function __construct(PartialsModuleFunctions $functions)
     {
         $this->functions = $functions;
     }

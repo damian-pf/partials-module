@@ -19,7 +19,7 @@ class PartialsModuleServiceProvider extends AddonServiceProvider
      * @var array
      */
     protected $plugins = [
-        'Anomaly\PartialsModule\Partial\PartialPlugin'
+        'Anomaly\PartialsModule\PartialsModulePlugin'
     ];
 
     /**
@@ -39,6 +39,7 @@ class PartialsModuleServiceProvider extends AddonServiceProvider
      */
     protected $routes = [
         'admin/partials'                                           => 'Anomaly\PartialsModule\Http\Controller\Admin\PartialsController@index',
+        'admin/partials/choose'                                    => 'Anomaly\PartialsModule\Http\Controller\Admin\PartialsController@choose',
         'admin/partials/create'                                    => 'Anomaly\PartialsModule\Http\Controller\Admin\PartialsController@create',
         'admin/partials/edit/{id}'                                 => 'Anomaly\PartialsModule\Http\Controller\Admin\PartialsController@edit',
         'admin/partials/view/{id}'                                 => 'Anomaly\PartialsModule\Http\Controller\Admin\PartialsController@view',
@@ -47,14 +48,13 @@ class PartialsModuleServiceProvider extends AddonServiceProvider
         'admin/partials/types/create'                              => 'Anomaly\PartialsModule\Http\Controller\Admin\TypesController@create',
         'admin/partials/types/edit/{id}'                           => 'Anomaly\PartialsModule\Http\Controller\Admin\TypesController@edit',
         'admin/partials/types/fields/{id}'                         => 'Anomaly\PartialsModule\Http\Controller\Admin\TypesController@fields',
+        'admin/partials/types/choose/{id}'                         => 'Anomaly\PartialsModule\Http\Controller\Admin\TypesController@choose',
         'admin/partials/types/fields/{id}/assign/{field}'          => 'Anomaly\PartialsModule\Http\Controller\Admin\TypesController@assign',
         'admin/partials/types/fields/{id}/assignment/{assignment}' => 'Anomaly\PartialsModule\Http\Controller\Admin\TypesController@assignment',
         'admin/partials/fields'                                    => 'Anomaly\PartialsModule\Http\Controller\Admin\FieldsController@index',
         'admin/partials/fields/choose'                             => 'Anomaly\PartialsModule\Http\Controller\Admin\FieldsController@choose',
         'admin/partials/fields/create'                             => 'Anomaly\PartialsModule\Http\Controller\Admin\FieldsController@create',
         'admin/partials/fields/edit/{id}'                          => 'Anomaly\PartialsModule\Http\Controller\Admin\FieldsController@edit',
-        'admin/partials/ajax/choose_type'                          => 'Anomaly\PartialsModule\Http\Controller\Admin\AjaxController@chooseType',
-        'admin/partials/ajax/choose_field/{id}'                    => 'Anomaly\PartialsModule\Http\Controller\Admin\AjaxController@chooseField',
         'admin/partials/settings'                                  => 'Anomaly\PartialsModule\Http\Controller\Admin\SettingsController@index',
     ];
 

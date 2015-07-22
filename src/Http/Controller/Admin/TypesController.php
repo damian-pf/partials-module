@@ -1,5 +1,6 @@
 <?php namespace Anomaly\PartialsModule\Http\Controller\Admin;
 
+use Anomaly\PartialsModule\Type\Contract\TypeInterface;
 use Anomaly\PartialsModule\Type\Contract\TypeRepositoryInterface;
 use Anomaly\PartialsModule\Type\Form\TypeFormBuilder;
 use Anomaly\PartialsModule\Type\Table\TypeTableBuilder;
@@ -70,8 +71,10 @@ class TypesController extends AdminController
         BreadcrumbCollection $breadcrumbs,
         $id
     ) {
+        /* @var TypeInterface $type */
         $type = $types->find($id);
 
+        $breadcrumbs->put($type->getName(), 'admin/partials/types/fields/' . $type->getId());
         $breadcrumbs->put('module::breadcrumb.fields', 'admin/partials/types/fields/' . $type->getId());
 
         return $table
@@ -82,23 +85,49 @@ class TypesController extends AdminController
                     ]
                 ]
             )
-            ->setOption('title', $type->getName() . ' fields')
-            ->setOption(
-                'description',
-                'This is a list of assigned fields for the "' . $type->getName() . '" partial type'
-            )
             ->setStream($type->getEntryStream())
             ->render();
     }
 
+    /**
+     * Return the modal for choosing a
+     * field to assign to the type.
+     *
+     * @param FieldRepositoryInterface $fields
+     * @return \Illuminate\View\View
+     */
+    public function choose(FieldRepositoryInterface $fields, TypeRepositoryInterface $types, $id)
+    {
+        /* @var TypeInterface $type */
+        $type = $types->find($id);
+
+        return view(
+            'module::ajax/choose_field',
+            [
+                'fields' => $fields->findByNamespace('partials')->notAssignedTo($type->getEntryStream())->unlocked(),
+                'id'     => $id
+            ]
+        );
+    }
+
+    /**
+     * Assign a field to a type's entry stream.
+     *
+     * @param AssignmentFormBuilder    $form
+     * @param TypeRepositoryInterface  $types
+     * @param FieldRepositoryInterface $fields
+     * @param                          $id
+     * @param                          $field
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function assign(
         AssignmentFormBuilder $form,
         TypeRepositoryInterface $types,
-        StreamRepositoryInterface $streams,
         FieldRepositoryInterface $fields,
         $id,
         $field
     ) {
+        /* @var TypeInterface $type */
         $type = $types->find($id);
 
         return $form
@@ -126,12 +155,12 @@ class TypesController extends AdminController
      */
     public function assignment(
         AssignmentFormBuilder $form,
-        StreamRepositoryInterface $streams,
         TypeRepositoryInterface $types,
         BreadcrumbCollection $breadcrumbs,
         $id,
         $assignment
     ) {
+        /* @var TypeInterface $type */
         $type = $types->find($id);
 
         $breadcrumbs->put('module::breadcrumb.fields', 'admin/partials/types/fields/' . $type->getId());

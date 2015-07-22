@@ -3,12 +3,10 @@
 return [
     'name'        => [
         'name'         => 'Name',
-        'placeholder'  => 'Example',
         'instructions' => 'Enter an easily identifiable name.'
     ],
     'slug'        => [
         'name'         => 'Slug',
-        'placeholder'  => 'example',
         'instructions' => 'The slug will be used when accessing partials with the plugin.'
     ],
     'type'        => [
@@ -17,17 +15,18 @@ return [
     ],
     'description' => [
         'name'         => 'Description',
-        'instructions' => 'Briefly describe the partial type and how it might be used.',
-        'placeholder'  => 'The example partials are used to display product example presentations for the website\'s product pages.'
+        'instructions' => 'Briefly describe the partial type and how it might be used.'
     ],
     'layout'      => [
         'name'         => 'Layout',
         'instructions' => 'The layout is used to wrap the display the partial\'s output.'
     ],
     'css'         => [
-        'name' => 'CSS'
+        'name'         => 'CSS',
+        'instructions' => 'This CSS will be added to the <strong>styles.css</strong> asset collection.'
     ],
     'js'          => [
-        'name' => 'JS'
+        'name'         => 'JS',
+        'instructions' => 'This script will be added to the <strong>scripts.js</strong> asset collection.'
     ]
 ];

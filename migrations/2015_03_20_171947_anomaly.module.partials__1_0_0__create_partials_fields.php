@@ -23,8 +23,7 @@ class AnomalyModulePartials_1_0_0_CreatePartialsFields extends Migration
         'slug'        => [
             'type'   => 'anomaly.field_type.slug',
             'config' => [
-                'slugify' => 'name',
-                'type'    => '_'
+                'slugify' => 'name'
             ]
         ],
         'css'         => [
@@ -43,7 +42,7 @@ class AnomalyModulePartials_1_0_0_CreatePartialsFields extends Migration
             'type'   => 'anomaly.field_type.editor',
             'config' => [
                 'mode'          => 'twig',
-                'default_value' => '<h1>{{ partial.entry.foo_bar }}</h1>'
+                'default_value' => '<h1>{{ partial.entry.field_slug }}</h1>'
             ]
         ],
         'type'        => [

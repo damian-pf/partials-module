@@ -1,7 +1,8 @@
 <?php
 
 return [
-    'name'        => 'Partials',
+    'title'       => 'Partials',
+    'name'        => 'Partials Module',
     'description' => 'Manage snippets of rich content to use anywhere.',
     'section'     => [
         'partials' => 'Partials',

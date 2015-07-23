@@ -6,13 +6,13 @@ return [
         'write',
         'delete'
     ],
-    'types' => [
+    'types'    => [
         'read',
         'write',
         'delete',
         'fields'
     ],
-    'fields' => [
+    'fields'   => [
         'read',
         'write',
         'delete'

@@ -20,6 +20,7 @@ class AnomalyModulePartials_1_0_0_CreatePartialsFields extends Migration
     protected $fields = [
         'name'        => 'anomaly.field_type.text',
         'description' => 'anomaly.field_type.textarea',
+        'selector'    => 'anomaly.field_type.text',
         'slug'        => [
             'type'   => 'anomaly.field_type.slug',
             'config' => [

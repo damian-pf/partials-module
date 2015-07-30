@@ -34,12 +34,12 @@ class PartialsModuleFunctions
     /**
      * Render a partial.
      *
-     * @param $slug
+     * @param $selector
      * @return null|View
      */
-    public function render($slug)
+    public function render($selector)
     {
-        if (!$partial = $this->partials->findBySlug($slug)) {
+        if (!$partial = $this->partials->findBySelector($selector)) {
             return null;
         }
 

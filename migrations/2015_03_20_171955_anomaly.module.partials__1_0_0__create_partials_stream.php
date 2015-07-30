@@ -28,18 +28,20 @@ class AnomalyModulePartials_1_0_0_CreatePartialsStream extends Migration
      * @var array
      */
     protected $assignments = [
-        'name'  => [
-            'required' => true,
-            'unique'   => true
-        ],
-        'slug'  => [
-            'required' => true,
-            'unique'   => true
-        ],
-        'type'  => [
+        'name'     => [
             'required' => true
         ],
-        'entry' => [
+        'slug'     => [
+            'required' => true
+        ],
+        'selector' => [
+            'required' => true,
+            'unique'   => true
+        ],
+        'type'     => [
+            'required' => true
+        ],
+        'entry'    => [
             'required' => true
         ],
         'css',

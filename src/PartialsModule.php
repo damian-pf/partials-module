@@ -42,7 +42,7 @@ class PartialsModule extends Module
                     'data-toggle' => 'modal',
                     'data-target' => '#modal',
                     'enabled'     => 'admin/partials/types/fields/*',
-                    'href'        => 'admin/partials/types/choose/{route.parameters.id}'
+                    'href'        => 'admin/partials/types/choose/{request.route.parameters.id}'
                 ]
             ]
         ],

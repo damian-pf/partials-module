@@ -28,8 +28,14 @@ class PartialEntryFormBuilder extends MultipleFormBuilder
      */
     public function onSavingPartial(PartialFormBuilder $builder)
     {
-        $type = $builder->getType();
+        $entry = $builder->getFormEntry();
 
+        if ($entry->exists) {
+            $type = $entry->getType();
+        } else {
+            $type = $builder->getType();
+        }
+        
         $builder->setFormValue('partial_selector', $type->getSlug() . '.' . $builder->getFormValue('partial_slug'));
     }
 

@@ -28,7 +28,11 @@ class ValidateSelector
         $form  = $builder->getChildForm('partial');
         $entry = $builder->getChildFormEntry('partial');
 
-        $type = $form->getType();
+        if ($entry->exists) {
+            $type = $entry->getType();
+        } else {
+            $type = $form->getType();
+        }
 
         if (!$partial = $partials->findBySelector($selector = $type->getSlug() . '.' . $value)) {
             return true;

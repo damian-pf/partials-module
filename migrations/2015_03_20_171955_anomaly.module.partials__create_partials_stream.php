@@ -3,13 +3,13 @@
 use Anomaly\Streams\Platform\Database\Migration\Migration;
 
 /**
- * Class AnomalyModulePartials_1_0_0_CreateTypesStream
+ * Class AnomalyModulePartialsCreatePartialsStream
  *
  * @link          http://anomaly.is/streams-platform
  * @author        AnomalyLabs, Inc. <hello@anomaly.is>
  * @author        Ryan Thompson <ryan@anomaly.is>
  */
-class AnomalyModulePartials_1_0_0_CreateTypesStream extends Migration
+class AnomalyModulePartialsCreatePartialsStream extends Migration
 {
 
     /**
@@ -18,7 +18,7 @@ class AnomalyModulePartials_1_0_0_CreateTypesStream extends Migration
      * @var array
      */
     protected $stream = [
-        'slug'         => 'types',
+        'slug'         => 'partials',
         'title_column' => 'name'
     ];
 
@@ -28,18 +28,22 @@ class AnomalyModulePartials_1_0_0_CreateTypesStream extends Migration
      * @var array
      */
     protected $assignments = [
-        'name'   => [
-            'required' => true,
-            'unique'   => true
-        ],
-        'slug'   => [
-            'required' => true,
-            'unique'   => true
-        ],
-        'layout' => [
+        'name'     => [
             'required' => true
         ],
-        'description',
+        'slug'     => [
+            'required' => true
+        ],
+        'selector' => [
+            'required' => true,
+            'unique'   => true
+        ],
+        'type'     => [
+            'required' => true
+        ],
+        'entry'    => [
+            'required' => true
+        ],
         'css',
         'js'
     ];

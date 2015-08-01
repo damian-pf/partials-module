@@ -3,13 +3,13 @@
 use Anomaly\Streams\Platform\Database\Migration\Migration;
 
 /**
- * Class AnomalyModulePartials_1_0_0_CreatePartialsFields
+ * Class AnomalyModulePartialsCreatePartialsFields
  *
  * @link          http://anomaly.is/streams-platform
  * @author        AnomalyLabs, Inc. <hello@anomaly.is>
  * @author        Ryan Thompson <ryan@anomaly.is>
  */
-class AnomalyModulePartials_1_0_0_CreatePartialsFields extends Migration
+class AnomalyModulePartialsCreatePartialsFields extends Migration
 {
 
     /**

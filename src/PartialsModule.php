@@ -54,8 +54,7 @@ class PartialsModule extends Module
                     'href'        => 'admin/partials/fields/choose'
                 ]
             ]
-        ],
-        'settings'
+        ]
     ];
 
 }

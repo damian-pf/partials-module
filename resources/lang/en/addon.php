@@ -7,7 +7,6 @@ return [
     'section'     => [
         'partials' => 'Partials',
         'types'    => 'Types',
-        'fields'   => 'Fields',
-        'settings' => 'Settings'
+        'fields'   => 'Fields'
     ]
 ];

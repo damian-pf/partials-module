@@ -13,10 +13,6 @@ return [
         'name'         => 'Type',
         'instructions' => 'Specify what type of partial this is.'
     ],
-    'selector'    => [
-        'name'         => 'Selector',
-        'instructions' => 'The selector is used for selecting this partial with the plugin.'
-    ],
     'description' => [
         'name'         => 'Description',
         'instructions' => 'Briefly describe the partial type and how it might be used.'

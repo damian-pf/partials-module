@@ -14,10 +14,10 @@ interface PartialRepositoryInterface extends EntryRepositoryInterface
 {
 
     /**
-     * Find a partial by it's selector.
+     * Find a partial by it's slug.
      *
-     * @param $selector
+     * @param $slug
      * @return null|PartialInterface
      */
-    public function findBySelector($selector);
+    public function findBySlug($slug);
 }

@@ -16,30 +16,6 @@ class PartialEntryFormBuilder extends MultipleFormBuilder
 {
 
     /**
-     * Fired just before the partial is saved.
-     *
-     * We build the selector here from the
-     * type and entry slug. The selector is
-     * used to select the partial from
-     * the plugin. It helps keep partial
-     * requests separated by use / type.
-     *
-     * @param PartialFormBuilder $builder
-     */
-    public function onSavingPartial(PartialFormBuilder $builder)
-    {
-        $entry = $builder->getFormEntry();
-
-        if ($entry->exists) {
-            $type = $entry->getType();
-        } else {
-            $type = $builder->getType();
-        }
-        
-        $builder->setFormValue('partial_selector', $type->getSlug() . '.' . $builder->getFormValue('partial_slug'));
-    }
-
-    /**
      * Fired after the entry form is saved.
      *
      * After the entry form is saved take the

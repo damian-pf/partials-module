@@ -30,7 +30,7 @@ class PartialTableBuilder extends TableBuilder
      */
     protected $columns = [
         'name',
-        'selector',
+        'slug',
         'entry.type.name'
     ];
 

@@ -22,26 +22,6 @@ class PartialFormBuilder extends FormBuilder
     protected $type = null;
 
     /**
-     * The form fields.
-     *
-     * @var array
-     */
-    protected $fields = [
-        '*',
-        'slug' => [
-            'rules'      => [
-                'unique_selector'
-            ],
-            'validators' => [
-                'unique_selector' => [
-                    'handler' => 'Anomaly\PartialsModule\Partial\Form\Validation\ValidateSelector@handle',
-                    'message' => 'anomaly.module.partials::validation.unique_selector'
-                ]
-            ]
-        ]
-    ];
-
-    /**
      * Skip these fields.
      *
      * @var array

@@ -23,8 +23,7 @@ class AnomalyModulePartialsCreatePartialsFields extends Migration
         'slug'        => [
             'type'   => 'anomaly.field_type.slug',
             'config' => [
-                'slugify' => 'name',
-                'type'    => '_'
+                'slugify' => 'name'
             ]
         ],
         'css'         => [

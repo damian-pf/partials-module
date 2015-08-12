@@ -16,16 +16,16 @@ class PartialsModulePlugin extends Plugin
     /**
      * The plugin functions.
      *
-     * @var PartialsModuleFunctions
+     * @var PartialsModulePluginFunctions
      */
     protected $functions;
 
     /**
      * Create a new PartialsModule instance.
      *
-     * @param PartialsModuleFunctions $functions
+     * @param PartialsModulePluginFunctions $functions
      */
-    public function __construct(PartialsModuleFunctions $functions)
+    public function __construct(PartialsModulePluginFunctions $functions)
     {
         $this->functions = $functions;
     }

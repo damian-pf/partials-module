@@ -4,14 +4,14 @@ use Anomaly\PartialsModule\Partial\Contract\PartialRepositoryInterface;
 use Illuminate\View\View;
 
 /**
- * Class PartialsModuleFunctions
+ * Class PartialsModulePluginFunctions
  *
  * @link          http://anomaly.is/streams-platform
  * @author        AnomalyLabs, Inc. <hello@anomaly.is>
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\PartialsModule\Partial
  */
-class PartialsModuleFunctions
+class PartialsModulePluginFunctions
 {
 
     /**
@@ -22,7 +22,7 @@ class PartialsModuleFunctions
     protected $partials;
 
     /**
-     * Create a new PartialsModuleFunctions instance.
+     * Create a new PartialsModulePluginFunctions instance.
      *
      * @param PartialRepositoryInterface $partials
      */

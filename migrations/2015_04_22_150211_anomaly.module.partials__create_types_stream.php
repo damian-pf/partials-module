@@ -34,7 +34,10 @@ class AnomalyModulePartialsCreateTypesStream extends Migration
         ],
         'slug'   => [
             'required' => true,
-            'unique'   => true
+            'unique'   => true,
+            'config'   => [
+                'type' => '_'
+            ]
         ],
         'layout' => [
             'required' => true

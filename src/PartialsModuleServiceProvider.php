@@ -19,7 +19,7 @@ class PartialsModuleServiceProvider extends AddonServiceProvider
      * @var array
      */
     protected $plugins = [
-        'Anomaly\PartialsModule\PartialsModulePlugin'
+        'Anomaly\PartialsModule\Partial\Plugin\PartialPlugin'
     ];
 
     /**

@@ -2,6 +2,7 @@
 
 use Anomaly\PartialsModule\Partial\Contract\PartialInterface;
 use Anomaly\Streams\Platform\Entry\EntryPresenter;
+use Anomaly\Streams\Platform\Support\Decorator;
 
 /**
  * Class PartialPresenter
@@ -34,5 +35,23 @@ class PartialPresenter extends EntryPresenter
             $this->object->getTitle(),
             ['target' => '_blank']
         );
+    }
+
+    /**
+     * Catch calls to fields on
+     * the page's related entry.
+     *
+     * @param string $key
+     * @return mixed
+     */
+    public function __get($key)
+    {
+        $entry = $this->object->getEntry();
+
+        if ($entry->hasField($key)) {
+            return (New Decorator())->decorate($entry)->{$key};
+        }
+
+        return parent::__get($key);
     }
 }

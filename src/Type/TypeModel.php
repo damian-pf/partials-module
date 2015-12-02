@@ -17,16 +17,6 @@ class TypeModel extends PartialsTypesEntryModel implements TypeInterface
 {
 
     /**
-     * Boot the model.
-     */
-    protected static function boot()
-    {
-        self::observe(app(substr(__CLASS__, 0, -5) . 'Observer'));
-
-        parent::boot();
-    }
-
-    /**
      * Get the name.
      *
      * @return string

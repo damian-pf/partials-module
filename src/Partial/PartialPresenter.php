@@ -1,5 +1,6 @@
 <?php namespace Anomaly\PartialsModule\Partial;
 
+use Anomaly\PartialsModule\Partial\Command\RenderPartial;
 use Anomaly\PartialsModule\Partial\Contract\PartialInterface;
 use Anomaly\Streams\Platform\Entry\EntryPresenter;
 use Anomaly\Streams\Platform\Support\Decorator;
@@ -24,17 +25,13 @@ class PartialPresenter extends EntryPresenter
     protected $object;
 
     /**
-     * Return the view link.
+     * Return a rendered partial.
      *
      * @return string
      */
-    public function viewLink()
+    public function render()
     {
-        return app('html')->link(
-            'admin/partials/view/' . $this->object->getId(),
-            $this->object->getTitle(),
-            ['target' => '_blank']
-        );
+        return $this->dispatch(new RenderPartial($this->getObject()));
     }
 
     /**

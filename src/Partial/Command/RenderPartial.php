@@ -1,4 +1,4 @@
-<?php namespace Anomaly\PartialsModule\Partial\Plugin\Command;
+<?php namespace Anomaly\PartialsModule\Partial\Command;
 
 use Anomaly\PartialsModule\Partial\Contract\PartialRepositoryInterface;
 use Anomaly\Streams\Platform\Support\Decorator;
@@ -11,26 +11,26 @@ use Illuminate\Contracts\View\Factory;
  * @link          http://anomaly.is/streams-platform
  * @author        AnomalyLabs, Inc. <hello@anomaly.is>
  * @author        Ryan Thompson <ryan@anomaly.is>
- * @package       Anomaly\PartialsModule\Partial\Plugin\Command
+ * @package       Anomaly\PartialsModule\Partial\Command
  */
 class RenderPartial implements SelfHandling
 {
 
     /**
-     * The partial slug.
+     * The partial.
      *
      * @var string
      */
-    protected $slug;
+    protected $partial;
 
     /**
      * Create a new RenderPartial instance.
      *
-     * @param $slug
+     * @param $partial
      */
-    public function __construct($slug)
+    public function __construct($partial)
     {
-        $this->slug = $slug;
+        $this->partial = $partial;
     }
 
     /**
@@ -42,10 +42,22 @@ class RenderPartial implements SelfHandling
      */
     public function handle(PartialRepositoryInterface $partials, Factory $view)
     {
-        if (!$partial = $partials->findBySlug($this->slug)) {
+        if (is_numeric($this->partial) && !$partial = $partials->find($this->partial)) {
             return null;
         }
-        
+
+        if (!is_numeric($this->partial) && !$partial = $partials->findBySlug($this->partial)) {
+            return null;
+        }
+
+        if (is_object($this->partial)) {
+            $partial = $this->partial;
+        }
+
+        if (!isset($partial)) {
+            return null;
+        }
+
         return $view->make('anomaly.module.partials::partial', compact('partial'))->render();
     }
 }

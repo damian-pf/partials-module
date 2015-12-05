@@ -1,17 +1,17 @@
-<?php namespace Anomaly\PartialsModule\Partial\Plugin;
+<?php namespace Anomaly\PartialsModule;
 
-use Anomaly\PartialsModule\Partial\Plugin\Command\RenderPartial;
+use Anomaly\PartialsModule\Partial\Command\RenderPartial;
 use Anomaly\Streams\Platform\Addon\Plugin\Plugin;
 
 /**
- * Class PartialPlugin
+ * Class PartialsModulePlugin
  *
  * @link          http://anomaly.is/streams-platform
  * @author        AnomalyLabs, Inc. <hello@anomaly.is>
  * @author        Ryan Thompson <ryan@anomaly.is>
- * @package       Anomaly\PartialsModule\Partial\Plugin
+ * @package       Anomaly\PartialsModule
  */
-class PartialPlugin extends Plugin
+class PartialsModulePlugin extends Plugin
 {
 
     /**
@@ -23,9 +23,9 @@ class PartialPlugin extends Plugin
     {
         return [
             new \Twig_SimpleFunction(
-                'partial',
-                function ($slug) {
-                    return $this->dispatch(new RenderPartial($slug));
+                'render_partial',
+                function ($partial) {
+                    return $this->dispatch(new RenderPartial($partial));
                 },
                 [
                     'is_safe' => ['html']

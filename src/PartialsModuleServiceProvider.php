@@ -23,6 +23,15 @@ class PartialsModuleServiceProvider extends AddonServiceProvider
     ];
 
     /**
+     * The class bindings.
+     *
+     * @var array
+     */
+    protected $bindings = [
+        'Anomaly\Streams\Platform\Model\Partials\PartialsPartialsEntryModel' => 'Anomaly\PartialsModule\Partial\PartialModel'
+    ];
+
+    /**
      * The singleton bindings.
      *
      * @var array

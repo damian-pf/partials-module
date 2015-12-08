@@ -30,6 +30,15 @@ class PartialsModulePlugin extends Plugin
                 [
                     'is_safe' => ['html']
                 ]
+            ),
+            new \Twig_SimpleFunction(
+                'partial',
+                function ($partial) {
+                    return $this->dispatch(new RenderPartial($partial));
+                },
+                [
+                    'is_safe' => ['html']
+                ]
             )
         ];
     }

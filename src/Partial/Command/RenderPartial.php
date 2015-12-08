@@ -46,7 +46,7 @@ class RenderPartial implements SelfHandling
             return null;
         }
 
-        if (!is_numeric($this->partial) && !$partial = $partials->findBySlug($this->partial)) {
+        if (is_string($this->partial) && !$partial = $partials->findBySlug($this->partial)) {
             return null;
         }
 

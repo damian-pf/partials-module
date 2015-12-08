@@ -29,7 +29,7 @@ class PartialPresenter extends EntryPresenter
      *
      * @return string
      */
-    public function render()
+    public function rendered()
     {
         return $this->dispatch(new RenderPartial($this->getObject()));
     }

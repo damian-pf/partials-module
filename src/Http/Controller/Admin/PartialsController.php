@@ -53,8 +53,8 @@ class PartialsController extends AdminController
      */
     public function create(PartialEntryFormBuilder $form)
     {
-        $this->dispatch(new AddEntryFormFromRequest($form));
         $this->dispatch(new AddPartialFormFromRequest($form));
+        $this->dispatch(new AddEntryFormFromRequest($form));
 
         return $form->render();
     }
@@ -71,8 +71,8 @@ class PartialsController extends AdminController
     {
         $partial = $partials->find($id);
 
-        $this->dispatch(new AddEntryFormFromPartial($form, $partial));
         $this->dispatch(new AddPartialFormFromPartial($form, $partial));
+        $this->dispatch(new AddEntryFormFromPartial($form, $partial));
 
         return $form->render($id);
     }

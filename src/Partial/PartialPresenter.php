@@ -26,7 +26,7 @@ class PartialPresenter extends EntryPresenter
 
     /**
      * Alias for rendered()
-     * 
+     *
      * @return string
      */
     public function render()

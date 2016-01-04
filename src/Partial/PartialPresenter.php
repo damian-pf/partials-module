@@ -25,6 +25,16 @@ class PartialPresenter extends EntryPresenter
     protected $object;
 
     /**
+     * Alias for rendered()
+     * 
+     * @return string
+     */
+    public function render()
+    {
+        return $this->rendered();
+    }
+
+    /**
      * Return a rendered partial.
      *
      * @return string

@@ -23,7 +23,7 @@ class PartialModel extends PartialsPartialsEntryModel implements PartialInterfac
      *
      * @var int
      */
-    protected $cacheMinutes = 99999;
+    protected $ttl = 99999;
 
     /**
      * Always eager load these.
@@ -31,7 +31,8 @@ class PartialModel extends PartialsPartialsEntryModel implements PartialInterfac
      * @var array
      */
     protected $with = [
-        'type'
+        'type',
+        'entry'
     ];
 
     /**

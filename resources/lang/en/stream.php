@@ -5,6 +5,6 @@ return [
         'name' => 'Partials'
     ],
     'types' => [
-        'name' => 'Types'
+        'name' => 'Partial Types'
     ],
 ];
